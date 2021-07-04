@@ -16,11 +16,11 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class PricingEngine {
 
-    private Double PRICE = 500.0;
+    private static final Double FLIGHT_PRICE = 500.0;
 
     public Double getFlightPrice(){
 
         // Any flight price rules
-        return PRICE;
+        return FLIGHT_PRICE;
     }
 }

@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 import reactor.util.function.Tuple2;
 
 import java.util.function.DoubleFunction;
-import java.util.function.Function;
 import java.util.function.ToDoubleFunction;
 
 /**
@@ -26,10 +25,8 @@ public class PriceFunctions {
     @Autowired
     private PricingEngine pricingEngine;
 
-    public final ToDoubleFunction<Tuple2<String, String>> callDownstreamF = tuple -> {
-
-       return pricingEngine.getFlightPrice();
-    };
+    public final ToDoubleFunction<Tuple2<String, String>> callDownstreamF = tuple ->
+            pricingEngine.getFlightPrice();
 
     /**
      * The Price response transform f.
