@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  flightStatusService
+  -->
+
+<project xmlns="http://maven.apache.org/DECORATION/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.1.0 http://maven.apache.org/xsd/decoration-1.1.0.xsd"
+	name="Ground Content Server">
+
+	<skin>
+		<groupId>${skinGroupId}</groupId>
+		<artifactId>${skinArtifactId}</artifactId>
+		<version>${skinVersion}</version>
+	</skin>
+	
+	<publishDate format="yyyy-MM-dd" position="right" />
+	<version position="right" />
+
+	<bannerLeft>
+		<name>Emirates Group IT</name>
+		<src>images/logo.bmp</src>
+		<href>http://www.theemiratesgroup.com</href>
+	</bannerLeft>
+
+	<bannerRight>
+		<src>images/logo.bmp</src>
+	</bannerRight>
+	
+	<body>
+		<breadcrumbs>
+			<item name="Home" href="../index.html" />
+			<item name="Flight Status Service" href="./index.html" />
+		</breadcrumbs>
+		
+		<menu name="Parent project">
+			<item name="parentProject" href="../index.html" />
+		</menu>
+		
+		<menu name="Overview">
+			<item name="Introduction" href="index.html" />
+			<item name="FAQ" href="faq.html" />
+		</menu>
+		
+		<menu ref="reports" />
+		
+		<footer><![CDATA[Copyright (C) 2018 Emirates Group IT. All rights reserved.]]></footer>
+	</body>
+
+</project>

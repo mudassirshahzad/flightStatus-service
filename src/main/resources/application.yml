@@ -1,0 +1,64 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: flightstatus-service
+  profiles:
+    active: default
+  cloud:
+    stream:
+      default:
+        contentType: application/json
+      bindings:
+        userFeedChannel:
+          destination: userFeedExchange
+  rabbitmq:
+    addresses: amqps://swfugdks:f7Y8Hkk73-k0rghg7@buck.rmq.cloudamqp.com/lbieblhg
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 125MB
+  http:
+    converters:
+      preferred-json-mapper: gson
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    baseUrl: http://localhost:9420/
+    service:
+      name: ${spring.application.name}
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+files:
+  max-number-of-files-allowed: 10
+
+app:
+  allowed-image-types: image/*, application/pdf
+
+---
+
+spring:
+  profiles: staging,prod
+  cloud:
+    config:
+      uri: http://config-service.carbee:8088
+      failFast: true
+      retry:
+        initialInterval: 3000
+        multiplier: 1.3
+        maxInterval: 5000
+        maxAttempts: 20

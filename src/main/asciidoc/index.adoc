@@ -1,0 +1,61 @@
+= Flight Status Service REST Doc
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+
+== Flight Status Service
+
+Secure service that process payment.
+
+=== Getting payment list
+
+This API returns a response of the payment given id
+
+==== 200
+
+===== Example Curl request
+
+include::{snippets}/listFromDeviceId/curl-request.adoc[]
+
+include::{snippets}/listFromSkywardsId/curl-request.adoc[]
+
+===== Example Http request
+
+include::{snippets}/listFromDeviceId/http-request.adoc[]
+
+include::{snippets}/listFromSkywardsId/http-request.adoc[]
+
+===== Request parameters
+
+include::{snippets}/listFromDeviceId/request-parameters.adoc[]
+
+include::{snippets}/listFromSkywardsId/request-parameters.adoc[]
+
+===== Example Http response
+
+include::{snippets}/listFromDeviceId/http-response.adoc[]
+
+include::{snippets}/listFromSkywardsId/http-response.adoc[]
+
+===== Example response body
+
+include::{snippets}/listFromDeviceId/response-body.adoc[]
+
+include::{snippets}/listFromSkywardsId/response-body.adoc[]
+
+==== 400
+
+===== Example Http request
+
+include::{snippets}/listFromDeviceIdException/http-request.adoc[]
+
+include::{snippets}/listFromSkywardsIdException/http-request.adoc[]
+
+===== Example Http response
+
+include::{snippets}/listFromDeviceIdException/http-response.adoc[]
+
+include::{snippets}/listFromSkywardsIdException/http-response.adoc[]

@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "7ba533c0-e048-4090-90f5-d0f303531eaf",
+		"name": "Emirates_STE_Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8085/mobile-apps-bff/v1/skywards/profile/images",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\":{\n        \"flightDate\": \"2021-07-03\",\n        \"departureAirport\": \"DXB\",\n        \"arrival\": \"LHR\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/flightStatus/ﬂight",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"flightStatus",
+						"ﬂight"
+					]
+				},
+				"description": "Skywards Tier Level Benefits Success response"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/mobile-apps-bff/v1/skywards/profile/images Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8083/flightStatus/price/12345/2021-07-03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"flightStatus",
+						"price",
+						"12345",
+						"2021-07-03"
+					]
+				},
+				"description": "Skywards Tier Level Benefits Success response"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/mobile-apps-bff/v1/skywards/profile/images/123457898",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/octet-stream"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8085/mobile-apps-bff/v1/skywards/profile/images/999888777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"mobile-apps-bff",
+						"v1",
+						"skywards",
+						"profile",
+						"images",
+						"999888777"
+					]
+				},
+				"description": "Skywards Tier Level Benefits Success response"
+			},
+			"response": []
+		}
+	]
+}
