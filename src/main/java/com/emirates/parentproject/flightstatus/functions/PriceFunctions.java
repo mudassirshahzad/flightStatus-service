@@ -5,7 +5,6 @@ package com.emirates.parentproject.flightstatus.functions;
  */
 
 import com.emirates.parentproject.flightstatus.bean.PriceResponse;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.stereotype.Component;
 import reactor.util.function.Tuple2;
 
 import java.util.function.Function;
+import java.util.function.ToDoubleFunction;
 
 /**
  * The type General item interface.
@@ -25,7 +25,7 @@ public class PriceFunctions {
     @Autowired
     private PricingEngine pricingEngine;
 
-    public final Function<Tuple2<String, String>, Double> callDownstreamF = (tuple) -> {
+    public final ToDoubleFunction<Tuple2<String, String>> callDownstreamF = (tuple) -> {
 
        return pricingEngine.getFlightPrice();
     };

@@ -66,7 +66,7 @@ public class FlightStatusHandler {
         final @Valid String date = request.pathVariable("date");
 
         return Mono.just(Tuples.of(flightNumber, date))
-                .map(priceFunctions.callDownstreamF)
+                .map(priceFunctions.callDownstreamF::applyAsDouble)
                 .map(priceFunctions.priceResponseTransformF)
                 .flatMap(price -> ok()
                         .contentType(MediaType.APPLICATION_STREAM_JSON)

@@ -45,10 +45,10 @@ public class PriceFunctionsTest {
         when(pricingEngine.getFlightPrice()).thenAnswer(answer).thenAnswer(answer);
 
         // Warmup call
-        priceFunctions.callDownstreamF.apply(Tuples.of("FlightNumber", "Date"));
+        priceFunctions.callDownstreamF.applyAsDouble(Tuples.of("FlightNumber", "Date"));
 
         // Actual call
-        Double price = priceFunctions.callDownstreamF.apply(Tuples.of("FlightNumber", "Date"));
+        Double price = priceFunctions.callDownstreamF.applyAsDouble(Tuples.of("FlightNumber", "Date"));
         assertEquals(price, responsePrice);
     }
 
