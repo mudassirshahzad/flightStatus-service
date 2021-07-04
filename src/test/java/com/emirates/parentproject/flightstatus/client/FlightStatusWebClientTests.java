@@ -85,7 +85,7 @@ class FlightStatusWebClientTests {
     }
 
     @Test
-    public void testGetFlightInformation() throws Exception {
+    void testGetFlightInformation() throws Exception {
 
         FlightStatusRequest request = FlightStatusRequest.builder().flightDate(new Date()).departureAirport("DXB").arrival("LHR").build();
         ServiceRestBean restRequest = ServiceRestBean.builder().data(request).build();

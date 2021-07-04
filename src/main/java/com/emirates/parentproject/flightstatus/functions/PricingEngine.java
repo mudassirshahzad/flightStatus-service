@@ -7,12 +7,6 @@ package com.emirates.parentproject.flightstatus.functions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import reactor.util.function.Tuple2;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.IntStream;
 
 /**
  * The type PricingEngine.
@@ -22,9 +16,11 @@ import java.util.stream.IntStream;
 @RequiredArgsConstructor
 public class PricingEngine {
 
+    private Double PRICE = 500.0;
+
     public Double getFlightPrice(){
 
         // Any flight price rules
-        return 500.0;
+        return PRICE;
     }
 }

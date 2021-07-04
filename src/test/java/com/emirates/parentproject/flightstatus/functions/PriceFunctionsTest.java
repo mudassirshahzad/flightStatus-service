@@ -20,7 +20,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 @ExtendWith(MockitoExtension.class)
 @Slf4j
-public class PriceFunctionsTest {
+class PriceFunctionsTest {
 
     @InjectMocks
     private PriceFunctions priceFunctions;
@@ -34,7 +34,7 @@ public class PriceFunctionsTest {
     }
 
     @Test
-    public void testCallDownstreamF() {
+    void testCallDownstreamF() {
 
         Double responsePrice = 1000.0;
         Answer<Double> answer = invocation -> {
