@@ -20,7 +20,7 @@ import lombok.Getter;
 public class DomainBaseException extends RuntimeException {
 
     private final Collection<DomainError> errors = new ArrayList<>();
-    private DomainDTO baseBean;
+    transient private DomainDTO baseBean;
 
     /**
      * Instantiates a new Domain base exception.
