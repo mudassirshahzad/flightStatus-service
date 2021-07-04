@@ -15,10 +15,6 @@
     <name>${project.artifactId}</name>
     <description>Flight Status Service</description>
 
-    <prerequisites>
-<!--        <maven>${maven.version}</maven>-->
-    </prerequisites>
-
     <properties>
         <start-class>com.emirates.parentproject.flightstatus.Application</start-class>
         <junit5.version>5.2.0</junit5.version>
@@ -111,14 +107,6 @@
             <version>${platform.version}</version>
             <scope>test</scope>
         </dependency>
-
-
-<!--        <dependency>-->
-<!--            <groupId>org.junit.platform</groupId>-->
-<!--            <artifactId>junit-platform-launcher</artifactId>-->
-<!--            <version>1.2.0</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
 
         <!-- Spring Boot dependencies -->
         <dependency>
@@ -231,14 +219,6 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.squareup.okhttp3/mockwebserver &ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>com.squareup.okhttp3</groupId>-->
-        <!--<artifactId>mockwebserver</artifactId>-->
-        <!--<version>3.10.0</version>-->
-        <!--<scope>test</scope>-->
-        <!--</dependency>-->
 
     </dependencies>
 
