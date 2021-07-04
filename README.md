@@ -35,6 +35,10 @@ mvn spring-boot:run
 ```
 Can also be run using
 docker-compose up
+
+However, this will require implementation of a spring config server 
+and a eureka service discovery which I can implement if required.
+
 ```
 The service will start on port 8083
 
