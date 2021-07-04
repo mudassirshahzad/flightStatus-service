@@ -1,6 +1,5 @@
 package com.emirates.parentproject.flightstatus.configurations;
 
-import com.emirates.parentproject.flightstatus.functions.PricingEngine;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
