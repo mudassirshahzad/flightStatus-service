@@ -35,7 +35,7 @@ public class FlightStatusFunctions {
     /**
      * The flight status dto transform f.
      */
-    public final Function<FlightStatusRequest, FlightStatusDAO> flightStatusDtoTransformF = (dto) ->
+    public final Function<FlightStatusRequest, FlightStatusDAO> flightStatusDtoTransformF = dto ->
     {
         final @Valid Date date = dto.getFlightDate();
         return FlightStatusDAO.builder()
@@ -45,7 +45,7 @@ public class FlightStatusFunctions {
                         .build();
     };
 
-    public final Function<FlightStatusDAO, Mono<FlightStatusDownstreamResponse>> callFlightStatusFromDownstreamF = (dao) -> {
+    public final Function<FlightStatusDAO, Mono<FlightStatusDownstreamResponse>> callFlightStatusFromDownstreamF = dao -> {
 
         Mono<FlightStatusDownstreamResponse> response1 = flightStatusWebClient.getFlightInformationFromDownstream(dao)
                 .subscribeOn(Schedulers.elastic());
@@ -66,9 +66,7 @@ public class FlightStatusFunctions {
     /**
      * The Flight status response transform f.
      */
-    public final Function<Mono<FlightStatusDownstreamResponse>, Mono<FlightStatusResponse>> flightStatusResponseTransformF = (flightResponse) ->{
-
-        return flightResponse.map(obj -> FlightStatusResponse.builder().flightNumber(obj.getFlightNumber()).build());
-    };
+    public final Function<Mono<FlightStatusDownstreamResponse>, Mono<FlightStatusResponse>> flightStatusResponseTransformF = flightResponse -> flightResponse.map(obj ->
+            FlightStatusResponse.builder().flightNumber(obj.getFlightNumber()).build());
 
 }
